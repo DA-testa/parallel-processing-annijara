@@ -15,11 +15,12 @@ def main():
     # m - job count
     n = 0
     m = 0
-
+    n, m = (input().split())
     # second line - data 
     # data - contains m integers t(i) - the times in seconds it takes any thread to process i-th job
     data = []
-
+    data = (list(map(int, input().split())))
+    
     # TODO: create the function
     result = parallel_processing(n,m,data)
     
