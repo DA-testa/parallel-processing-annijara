@@ -3,26 +3,16 @@
 def parallel_processing(n, m, data):
     output = []
     # TODO: write the function for simulating parallel tasks, 
-    # create the output pairs
-
-    
-    """ processor = [(0, i) for i in range(n)]
+    # create the output pairs    
+    thread = [(0, i) for i in range(n)]
     finish = [0] * n
     for i in range(m):
         task = data[i]
-        next = min(processor)[1]
-        output.append((next, processor[next][0]))
-        processor[next]= (processor[next][0] + task, next)
-         """
+        next = min(thread)[1]
+        output.append((next, thread[next][0]))
+        thread[next]= (thread[next][0] + task, next)
     return output
-        
-""" for i in processor:
-        next = finish.index(min(finish))
-        output.append((next, finish[next]))
-        finish[next] = finish[next] + i[0]
-    return output """
-"""     for i in range(n):
-        processor = (0, i) """
+
 def main():
     # TODO: create input from keyboard
     # input consists of two lines
@@ -41,8 +31,8 @@ def main():
     result = parallel_processing(n,m,data)
     
     # TODO: print out the results, each pair in it's own line
-    for i, j in result:
-        print(i, j)
+    for index, time in result:
+        print(index, time)
 
 
 if __name__ == "__main__":
