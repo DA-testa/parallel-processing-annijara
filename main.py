@@ -4,14 +4,16 @@ def parallel_processing(n, m, data):
     output = []
     # TODO: write the function for simulating parallel tasks, 
     # create the output pairs    
-    thread = [(0, i) for i in range(n)]
-    finish = [0] * n
-    for i in range(m):
-        task = data[i]
-        next = min(thread)[1]
-        output.append((next, thread[next][0]))
-        thread[next]= (thread[next][0] + task, next)
-    return output
+    thread = [(0, t) for t in range(n) ]
+
+    for t in range (m):
+        nxt = min(thread)[1]
+        tsk = data[t] 
+        output.append((next, thread[nxt][0]))
+        thread[nxt] = (thread[nxt][0]+ tsk, nxt)    
+
+    return output 
+
 
 def main():
     # TODO: create input from keyboard
@@ -37,3 +39,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
